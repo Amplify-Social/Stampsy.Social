@@ -12,6 +12,8 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -69,16 +71,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\libs\Xamarin.Social\src\Xamarin.Social\Xamarin.Social.csproj">
-      <Project>{2cafd7ae-c52f-4f01-9e25-58656dd8476d}</Project>
-      <Name>Xamarin.Social</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\libs\Xamarin.Social\Xamarin.Auth\src\Xamarin.Auth\Xamarin.Auth.csproj">
-      <Project>{c9ff1919-78dd-4084-976d-bdabc0a7e80b}</Project>
-      <Name>Xamarin.Auth</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -87,4 +79,14 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\packages\Xamarin.Social\Xamarin.Auth\src\Xamarin.Auth\Xamarin.Auth.csproj">
+      <Project>{C9FF1919-78DD-4084-976D-BDABC0A7E80B}</Project>
+      <Name>Xamarin.Auth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\packages\Xamarin.Social\src\Xamarin.Social\Xamarin.Social.csproj">
+      <Project>{2CAFD7AE-C52F-4F01-9E25-58656DD8476D}</Project>
+      <Name>Xamarin.Social</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
