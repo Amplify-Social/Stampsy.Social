@@ -22,7 +22,8 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchLink>None</MtouchLink>
     <ConsolePause>false</ConsolePause>
-    <MtouchI18n />
+    <MtouchI18n>
+    </MtouchI18n>
     <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
@@ -43,8 +44,10 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <ConsolePause>false</ConsolePause>
-    <IpaPackageName />
-    <MtouchI18n />
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
     <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -83,7 +86,7 @@
       <HintPath>libs\SDWebImage.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\src\packages\Newtonsoft.Json.5.0.6\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\src\packages\Newtonsoft.Json.6.0.1\lib\portable-net40+sl5+wp80+win8+monotouch+monoandroid\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -144,17 +147,17 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <ProjectReference Include="..\libs\Xamarin.Social\Xamarin.Auth\src\Xamarin.Auth.iOS\Xamarin.Auth.iOS.csproj">
-      <Project>{9309BCCC-AA7B-4195-A130-D4572FA9488D}</Project>
-      <Name>Xamarin.Auth.iOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\libs\Xamarin.Social\src\Xamarin.Social.iOS\Xamarin.Social.iOS.csproj">
-      <Project>{C91EF8FC-37E3-4952-A8A3-BA3A4422B0C5}</Project>
-      <Name>Xamarin.Social.iOS</Name>
-    </ProjectReference>
     <ProjectReference Include="..\src\Stampsy.Social.iOS\Stampsy.Social.iOS.csproj">
       <Project>{13ADBE0B-E6A7-4E29-B0F0-9E12B870FBD3}</Project>
       <Name>Stampsy.Social.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\packages\Xamarin.Social\Xamarin.Auth\src\Xamarin.Auth.iOS\Xamarin.Auth.iOS.csproj">
+      <Project>{9309BCCC-AA7B-4195-A130-D4572FA9488D}</Project>
+      <Name>Xamarin.Auth.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\packages\Xamarin.Social\src\Xamarin.Social.iOS\Xamarin.Social.iOS.csproj">
+      <Project>{C91EF8FC-37E3-4952-A8A3-BA3A4422B0C5}</Project>
+      <Name>Xamarin.Social.iOS</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

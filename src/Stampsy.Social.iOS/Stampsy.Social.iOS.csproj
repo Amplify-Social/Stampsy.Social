@@ -124,4 +124,14 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\packages\Xamarin.Social\Xamarin.Auth\src\Xamarin.Auth.iOS\Xamarin.Auth.iOS.csproj">
+      <Project>{9309BCCC-AA7B-4195-A130-D4572FA9488D}</Project>
+      <Name>Xamarin.Auth.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\packages\Xamarin.Social\src\Xamarin.Social.iOS\Xamarin.Social.iOS.csproj">
+      <Project>{C91EF8FC-37E3-4952-A8A3-BA3A4422B0C5}</Project>
+      <Name>Xamarin.Social.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
