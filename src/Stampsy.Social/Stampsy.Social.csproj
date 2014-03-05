@@ -35,11 +35,11 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\portable-net40+sl5+wp80+win8+monotouch+monoandroid\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiException.cs" />
@@ -83,6 +83,10 @@
     <ProjectReference Include="..\..\packages\Xamarin.Social\src\Xamarin.Social\Xamarin.Social.csproj">
       <Project>{2CAFD7AE-C52F-4F01-9E25-58656DD8476D}</Project>
       <Name>Xamarin.Social</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\packages\Xamarin.Social\Xamarin.Auth\src\Xamarin.Auth\Xamarin.Auth.csproj">
+      <Project>{C9FF1919-78DD-4084-976D-BDABC0A7E80B}</Project>
+      <Name>Xamarin.Auth</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

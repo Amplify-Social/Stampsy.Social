@@ -126,7 +126,7 @@ namespace Stampsy.Social.Services
             }
             else {
                 req = session.Service.CreateRequest ("POST", new Uri ("https://api.twitter.com/1.1/statuses/update_with_media.json"), session.Account);
-                req.AddMultipartData ("status", status);
+                req.Parameters ["status"] = status;
                 foreach (var i in item.Images.Take (session.Service.MaxImages)) {
                     i.AddToRequest (req, "media[]");
                 }

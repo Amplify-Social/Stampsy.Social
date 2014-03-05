@@ -149,7 +149,7 @@ namespace Stampsy.Social.Services
                     message.AppendLine ();
                     message.Append (l.AbsoluteUri);
                 }
-                req.AddMultipartData ("message", message.ToString ());
+                req.Parameters ["message"] = message.ToString ();
             }
             else {
                 req = session.Service.CreateRequest ("POST", new Uri (BaseUri, "me/feed"), session.Account);
