@@ -46,6 +46,9 @@ namespace Stampsy.Social.Services
 
         public override Task ShareAsync (Item item, CancellationToken token = default (CancellationToken), LoginOptions options = default (LoginOptions))
         {
+            var requiredScope = new [] { "email", "publish_actions" };
+            ResetSessionIfDifferentScope (requiredScope);
+
             return this.WithSession (
                 () => this.Share (item, token),
                 options,
@@ -385,6 +388,16 @@ namespace Stampsy.Social.Services
             var kind = GetExceptionKind (code);
 
             throw new ApiException (msg, code, response, kind);
+        }
+
+        void ResetSessionIfDifferentScope(IEnumerable<string> requiredScope)
+        {
+            if (this.ActiveSession != null)
+            {
+                var supportedScope = this.ActiveSession.Service as ISupportScope;
+                if (supportedScope != null && !supportedScope.Scopes.SequenceEqual (requiredScope))
+                    CloseSession ();
+            }
         }
 
         ApiExceptionKind GetExceptionKind (int facebookErrorCode)
