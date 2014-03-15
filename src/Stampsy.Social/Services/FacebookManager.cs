@@ -396,7 +396,10 @@ namespace Stampsy.Social.Services
             {
                 var supportedScope = this.ActiveSession.Service as ISupportScope;
                 if (supportedScope != null && !supportedScope.Scopes.SequenceEqual (requiredScope))
+                {
                     CloseSession ();
+                    supportedScope.Scopes = requiredScope.ToArray();
+                }
             }
         }
 
