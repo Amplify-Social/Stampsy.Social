@@ -50,12 +50,13 @@ namespace Stampsy.Social
         public abstract Task ShareAsync (Item item, CancellationToken token = default (CancellationToken), LoginOptions options = default (LoginOptions));
         public abstract Task<Page<IEnumerable<ServiceUser>>> GetFriendsAsync (Page<IEnumerable<ServiceUser>> previous = null, CancellationToken token = default (CancellationToken), LoginOptions options = default (LoginOptions));
 
-        public virtual Task<IDictionary<string, string>> GetTokenDataAsync (CancellationToken token = default (CancellationToken), LoginOptions options = default (LoginOptions))
+        public virtual Task<IDictionary<string, string>> GetTokenDataAsync (CancellationToken token = default (CancellationToken), LoginOptions options = default (LoginOptions), string[] scope = null)
         {
             return this.WithSession (
                 () => this.GetTokenData (token),
                 options,
-                token
+                token,
+                scope
             );
         }
 

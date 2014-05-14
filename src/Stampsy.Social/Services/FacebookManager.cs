@@ -390,6 +390,13 @@ namespace Stampsy.Social.Services
             throw new ApiException (msg, code, response, kind);
         }
 
+        public override Task<IDictionary<string, string>> GetTokenDataAsync(CancellationToken token = default (CancellationToken), LoginOptions options = default (LoginOptions), string[] scope = null)
+        {
+            if (scope != null)
+                ResetSessionIfDifferentScope(scope);
+            return base.GetTokenDataAsync(token, options, scope);
+        }
+
         void ResetSessionIfDifferentScope(IEnumerable<string> requiredScope)
         {
             if (this.ActiveSession != null)
